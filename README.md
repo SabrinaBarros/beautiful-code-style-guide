@@ -7,8 +7,7 @@
 | All *beautiful* Guides |
 | :--------------------: |
 | <a href = 'JSstyleGuide.md'>
-  <img src = 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1a4g9ab9x52tzsbgyz4w.png' style = 'width: 100px'>
-</a> |
+  <img src = 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1a4g9ab9x52tzsbgyz4w.png' width='100px'> </a> |
 
 ## License 📖
 
