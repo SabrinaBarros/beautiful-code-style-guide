@@ -9,3 +9,7 @@
 | <a href = 'JSstyleGuide.md'>
   <img src = 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1a4g9ab9x52tzsbgyz4w.png' style = 'width: 100px'>
 </a> |
+
+## License 📖
+
+[GPL v2 License](https://github.com/SabrinaBarros/hiwari/blob/master/LICENSE.md) © [Sabrina Barros](https://github.com/SabrinaBarros)
