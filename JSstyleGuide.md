@@ -15,14 +15,15 @@
 - [Add spaces outside parentheses `()` but avoid it inside](#add-spaces-outside-parentheses-()-but-avoid-it-inside)
 - [Use function expressions instead of function declarations](#use-function-expressions-instead-of-function-declarations)
 - [Anonimous function](#when-you-must-use-function-expressions-(as-when-passing-an-anonymous-function),-use-arrow-function-notation)
-- [Ternary operator](#ternary-operator)
+- [Ternary operator single line only](#ternary-operator-single-line-only)
+- [Don't be dumb with ternary operator](#dont-be-dumb-with-ternary-operator)
 - [Use `const` for all of your references, avoid using `var`](#use-const-for-all-of-your-references-avoid-using-var)
 - [If you must reassign references, use `let` instead of `var`](#if-you-must-reassign-references-use-let-instead-of-var)
 - [Declare one `const` or `let` per declaration statement](#declare-one-const-or-let-per-declaration-statement)
 - [Use the literal syntax for `object` creation](#use-the-literal-syntax-for-object-creation)
 - [Use the literal syntax for `array` creation](#use-the-literal-syntax-for-array-creation)
 - [Declare `array` items in list](#declare-array-items-in-list)
-- [Parentheses `()` and commas , are not followed by indented children on new lines](#parentheses-()-and-commas-`-are-not-followed-by-indented-children-on-new-lines)
+- [Function arguments indentation](#function-arguments-indentation)
 - [Method chaining](#method-chaining)
 - [Any non-trivial conditions must be assigned to a variable or function with a descriptive name](#any-non-trivial-conditions-must-be-assigned-to-a-variable-or-function-with-a-descriptive-name)
 - [Try to write comments that explain higher level mechanisms or clarify difficult segments of your code](#try-to-write-comments-that-explain-higher-level-mechanisms-or-clarify-difficult-segments-of-your-code)
@@ -31,7 +32,7 @@
 
 ## Soft tabs with two spaces
 
-*Eslint: [space-in-parens](https://eslint.org/docs/rules/space-in-parens)*
+*Eslint: [indent](https://eslint.org/docs/rules/indent)*
 
 - Wrong:
 
@@ -232,7 +233,7 @@ const foo = function () { }
 
 ## When you must use function expressions (as when passing an anonymous function), use `arrow function` notation
 
-*Eslint: [func-style](https://eslint.org/docs/rules/func-style)*
+*Eslint: [prefer-arrow-callback](https://eslint.org/docs/rules/prefer-arrow-callback)*
 
 - Wrong:
 
@@ -252,9 +253,9 @@ const foo = function () { }
 })
 ```
 
-## Ternary operator
+## Ternary operator single line only
 
-*The ternary operator should be used on a single line. Split it up into multiple lines instead. Eslint: [no-nested-ternay](https://eslint.org/docs/rules/no-nested-ternary)*
+*The ternary operator should be used on a single line.*
 
 - Wrong:
 
@@ -270,9 +271,25 @@ const foo = (condition)
 const foo = (condition) ? 1 : 2
 ```
 
+## Don't be dumb with ternary operator
+
+*Disallow ternary operators when simpler alternatives exist. Eslint: [no-unneeded-ternary](https://eslint.org/docs/rules/no-unneeded-ternary)*
+
+- Wrong:
+
+```js
+const isYes = answer === 1 ? true : false;
+```
+
+- Correct:
+
+```js
+const isYes = answer === 1;
+```
+
 ## Use `const` for all of your references, avoid using `var`
 
-*Eslint: [no-var](https://eslint.org/docs/rules/no-var)*
+*Eslint: [prefer-const](https://eslint.org/docs/rules/prefer-const)*
 
 - Wrong:
 
@@ -362,7 +379,7 @@ const foo = []
 
 ## Declare `array` items in list
 
-*Eslint: [array-element-newline](https://eslint.org/docs/rules/array-element-newline)*
+*>= 4 arguments: indent. Eslint: [array-element-newline](https://eslint.org/docs/rules/array-element-newline) and [array-bracket-newline](https://eslint.org/docs/rules/array-bracket-newline)*
 
 - Wrong:
 
@@ -373,23 +390,40 @@ const foo = [
 ```
 
 ```js
-const foo = ['hello', 'world']
+const foo = ['hello', 'world', 'lore', 'impsum']
 ```
 
 - Correct:
 
 ```js
+const foo = ['hello', 'world']
+```
+
+```js
 const foo = [
   'hello',
   'word',
+  'lore', 
+  'impsum'
 ]
 ```
 
-## Parentheses `()` and commas `,` are not followed by indented children on new lines
+## Function arguments indentation
 
-*Eslint: [function-paren-newline](https://eslint.org/docs/rules/function-paren-newline)*
+*>= 4 arguments: indent (excerpt callbacks brackets). Eslint: [function-paren-newline](https://eslint.org/docs/rules/function-paren-newline)*
 
 - Wrong:
+
+```js
+const foo = (
+  'lore', 
+  'impsum'
+) => {}
+```
+
+```js
+const foo = ('carls', 'farls', 'karen', 'logan') => {}
+```
 
 ```js
 foo.bar(
@@ -402,6 +436,19 @@ foo.bar(
 - Correct:
 
 ```js
+const foo = ('lore', 'impsum') => {}
+```
+
+```js
+const foo = (
+  'carls', 
+  'farls', 
+  'karen',
+  'logan'
+) => {}
+```
+
+```js
 foo.bar('string', () => {
   statements
 })
@@ -409,7 +456,7 @@ foo.bar('string', () => {
 
 ## Method chaining
 
-*Eslint: [newline-per-chianed-call](https://eslint.org/docs/rules/newline-per-chained-call)*
+*Eslint: [newline-per-chained-call](https://eslint.org/docs/rules/newline-per-chained-call)*
 
 - Wrong:
 
