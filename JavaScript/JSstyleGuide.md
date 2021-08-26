@@ -2,6 +2,8 @@
 
 ![keyboard](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rkwepwglhcixd3j2gny2.gif)
 
+> [ESlint configuration file](.eslintrc.json)
+
 ## Summary 📑
 
 - [Soft tabs with two spaces](#soft-tabs-with-two-spaces)
