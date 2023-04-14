@@ -8,8 +8,9 @@ Is your code ugly? Here is the way to the solution ✨
 
 | All *beautiful* Guides | Config File |
 | :--------------------- | :---------- |
+| CSS (WIP) | StyleLint (WIP) |
 | [JavaScript](./JavaScript/JSstyleGuide.md) | [ESlint](./JavaScript/.eslintrc.json) |
 
 ## License 📖
 
-[GPL v2 License](https://github.com/SabrinaBarros/hiwari/blob/master/LICENSE.md) © [Sabrina Barros](https://github.com/SabrinaBarros)
+[MIT License](https://github.com/SabrinaBarros/hiwari/blob/master/LICENSE) © [Sabrina Barros](https://github.com/SabrinaBarros)
